@@ -182,7 +182,7 @@ A full Postman collection is included in the repo for testing every endpoint.
 BS Software Engineering, FAST-NUCES (CFD Campus)
 
 - GitHub: [@mohsinshah12309](https://github.com/mohsinshah12309)
-- LinkedIn: [mohsin-alishah-96b0302b6](https://linkedin.com/in/mohsin-alishah-96b0302b6)
+- LinkedIn: [[mohsin-alishah-96b0302b6](https://linkedin.com/in/mohsin-alishah-96b0302b6)](https://www.linkedin.com/in/mohsin-ali-shah-96b0302b6/)
 
 ---
 
