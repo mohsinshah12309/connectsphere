@@ -174,16 +174,7 @@ A full Postman collection is included in the repo for testing every endpoint.
 
 ---
 
-## 📸 Screenshots
 
-> _Add screenshots of the Feed, Profile, and Explore pages here once the app is deployed — drag images into this section on GitHub and they'll auto-embed._
-
-<!--
-![Feed](./docs/screenshots/feed.png)
-![Profile](./docs/screenshots/profile.png)
--->
-
----
 
 ## 👤 Author
 
