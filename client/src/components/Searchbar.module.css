@@ -1,0 +1,134 @@
+.wrap {
+  position: relative;
+  width: 100%;
+}
+
+.wrap.compact {
+  max-width: 220px;
+}
+
+/* Animated gradient ring that glows around the field on focus — sits
+   behind fieldShell and is revealed by fieldShell's own border fading,
+   giving a soft "listening" halo instead of a flat static outline. */
+.fieldShell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 0 14px;
+  border: 1.5px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  transition: border-color 0.2s var(--ease-out), box-shadow 0.25s var(--ease-out);
+}
+
+.wrap.focused .fieldShell {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--accent), 0 4px 18px rgba(91, 79, 233, 0.28);
+}
+
+.searchIcon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  color: var(--muted);
+  transition: color 0.2s ease, transform 0.2s var(--ease-out);
+}
+
+.wrap.focused .searchIcon {
+  color: var(--accent);
+  transform: scale(1.08);
+}
+
+.fieldShell input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 0;
+  border: none;
+  background: transparent;
+  font-size: 0.88rem;
+}
+
+.fieldShell input:focus-visible {
+  outline: none;
+}
+
+.wrap.compact .fieldShell {
+  padding: 0 12px;
+}
+
+.wrap.compact .fieldShell input {
+  padding: 8px 0;
+  font-size: 0.82rem;
+}
+
+.spinner {
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--accent-soft);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  flex-shrink: 0;
+}
+
+.results {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: var(--glass-bg-strong);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lift);
+  max-height: 320px;
+  overflow-y: auto;
+  z-index: 40;
+  animation: fadeUp 0.2s var(--ease-out) both;
+}
+
+.status {
+  padding: 14px;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.12s ease;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.row:hover {
+  background: var(--accent-soft);
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--accent-soft);
+  flex-shrink: 0;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.bio {
+  font-size: 0.76rem;
+  color: var(--muted);
+}

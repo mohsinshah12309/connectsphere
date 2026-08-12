@@ -1,0 +1,63 @@
+.btn {
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  border: none;
+  background: var(--gradient-accent);
+  color: var(--accent-ink);
+  margin-bottom: 8px;
+  transition: transform 0.15s var(--ease-out), box-shadow 0.15s var(--ease-out), background 0.15s ease;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(91, 79, 233, 0.35);
+}
+
+.btn.following {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  color: var(--ink);
+  border: 1px solid var(--glass-border);
+  box-shadow: none;
+}
+
+.btn.following:hover:not(:disabled) {
+  background: rgba(255, 107, 107, 0.15);
+  color: var(--danger);
+  border-color: transparent;
+}
+
+/* Swap label to "Unfollow" on hover while following, without layout shift */
+.btn.following:hover:not(:disabled)::after {
+  content: 'Unfollow';
+}
+
+.btn.following:hover:not(:disabled) {
+  font-size: 0;
+}
+
+.btn.following:hover:not(:disabled)::after {
+  font-size: 0.86rem;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.sm {
+  padding: 6px 14px;
+  font-size: 0.78rem;
+}
+
+.md {
+  padding: 9px 20px;
+  font-size: 0.86rem;
+}
+
+.lg {
+  padding: 11px 26px;
+  font-size: 0.92rem;
+}

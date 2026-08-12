@@ -1,0 +1,36 @@
+.wrap {
+  position: relative;
+}
+
+.bell {
+  position: relative;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  padding: 6px;
+  line-height: 1;
+  transition: transform 0.15s var(--ease-out);
+}
+
+.bell:hover {
+  transform: scale(1.08) rotate(-6deg);
+}
+
+.badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 3px;
+  border-radius: 999px;
+  background: var(--live);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--surface);
+  animation: heartPop 0.4s var(--ease-out);
+}

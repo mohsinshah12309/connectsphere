@@ -1,0 +1,117 @@
+.page {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 0 16px 60px;
+}
+
+.cover {
+  height: 160px;
+  border-radius: 0 0 var(--radius) var(--radius);
+  background-color: var(--accent-soft);
+  background-image: linear-gradient(135deg, rgba(91, 79, 233, 0.18), rgba(15, 157, 140, 0.14));
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  margin: 0 -16px;
+  animation: fadeUp 0.4s var(--ease-out) both;
+}
+
+.headRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: -40px;
+  padding: 0 4px;
+}
+
+.avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--bg);
+  background: var(--accent-soft);
+  box-shadow: var(--shadow-lift);
+}
+
+.editBtn {
+  border-radius: var(--radius-sm);
+  padding: 9px 20px;
+  font-weight: 700;
+  font-size: 0.86rem;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  margin-bottom: 8px;
+  transition: transform 0.15s var(--ease-out), box-shadow 0.15s var(--ease-out);
+}
+
+.editBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.name {
+  margin-top: 16px;
+  font-size: 1.35rem;
+}
+
+.bio {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  margin-top: 14px;
+}
+
+.stats button {
+  background: none;
+  border: none;
+  font-size: 0.88rem;
+  color: var(--muted);
+  transition: color 0.15s ease;
+}
+
+.stats button:hover {
+  color: var(--accent);
+}
+
+.stats strong {
+  color: var(--ink);
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 0 12px 48px;
+  }
+
+  .cover {
+    height: 120px;
+    margin: 0 -12px;
+  }
+
+  .avatar {
+    width: 68px;
+    height: 68px;
+    border-width: 3px;
+  }
+
+  .headRow {
+    margin-top: -32px;
+  }
+
+  .name {
+    font-size: 1.15rem;
+  }
+
+  .editBtn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+}
