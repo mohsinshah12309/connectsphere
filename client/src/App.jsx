@@ -5,7 +5,7 @@ import Register from "./pages/Register";
 import Feed from "./pages/Feed";
 import Explore from "./pages/Explore";
 import Profile from "./pages/Profile";
-import EditProfile from "./pages/EditProfile";
+import EditProfile from "./pages/EditProfile.jsx";
 import PostDetail from "./pages/PostDetail";
 import Navbar from "./components/Navbar";
 import SpaceBackground from "./components/SpaceBackground";
