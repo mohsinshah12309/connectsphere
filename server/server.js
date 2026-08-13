@@ -22,10 +22,28 @@ connectDB();
 const app = express();
 const server = http.createServer(app);
 
+// Support multiple allowed origins at once (local dev + deployed frontend),
+// via a comma-separated CLIENT_URL env var, e.g.:
+//   CLIENT_URL=http://localhost:5173,https://connectsphere.vercel.app
+const allowedOrigins = (process.env.CLIENT_URL || 'http://localhost:5173')
+  .split(',')
+  .map((url) => url.trim());
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    // Allow requests with no origin (e.g. Postman, curl, server-to-server)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error(`CORS blocked for origin: ${origin}`));
+    }
+  },
+};
+
 // Socket.io setup
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    origin: allowedOrigins,
     methods: ['GET', 'POST'],
   },
 });
@@ -37,7 +55,7 @@ app.set('io', io);
 require('./socket/notificationSocket')(io);
 
 // Core middleware
-app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:5173' }));
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
